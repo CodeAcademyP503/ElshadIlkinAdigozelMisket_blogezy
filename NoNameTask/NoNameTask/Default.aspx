@@ -32,9 +32,7 @@
             <h2>Web Hosting</h2>
             <p>
 
-				<dialog>
-					hello world
-				</dialog>
+				
                 You can easily find a web hosting company that offers the right mix of features and price for your applications.
             </p>
             <p>
