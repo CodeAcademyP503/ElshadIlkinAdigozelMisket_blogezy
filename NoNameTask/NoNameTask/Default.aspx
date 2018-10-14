@@ -30,7 +30,7 @@
                             %>
                                     </ul>
                                     <%
-                            break;
+                            continue;
                         }
                         %>
                         <li class="<%Response.Write(menyItem.Name);%>">
@@ -40,35 +40,6 @@
                     }
 
                    %>
-                <li class="Home">
-                    Home
-                </li>
-                <li class="itemHead">
-                    Features
-                </li>
-                <ul class="itemMain">
-                    <li class="StandartPost">Standart Post</li>
-                    <li class="VideoPost">Video Post</li>
-                    <li class="AudioPost">Audio Post</li>
-                    <li class="QalleryPost">Qallery Post</li>
-                    <li class="QuotePost">Quote Post</li>
-                    <li class="LinkPost">Link Post</li>
-                </ul>
-                <li class="Lifestyle ">
-                     Lifestyle 
-                </li>
-                <li class="Travel">
-                    Travel
-                </li>
-                <li class="Music">
-                    Music
-                </li>
-                <li class="About">
-                    About
-                </li>
-                <li class="Contact">
-                    Contact
-                </li>
             </ul>
      </div>
 </div>
@@ -79,7 +50,7 @@
 					  <div class="col-lg-12">
 						  <div class="page-title">
 							  <div class="row">
-								  <div class="col-md-9 col-xs-12">
+								  <div class="col-md-12 col-xs-12">
 									  <h2>
 										  <span>News and Stories</span>
 									  </h2>
@@ -98,7 +69,7 @@
 			  <div class="container">
 				  <div class="row">
 					  <!--Content-->
-					  <div class="col-xl-8">
+					  <div class="col-lg-9">
 						  <!--Post-->
 						  <article class="post">
 							  <div class="post-header">
@@ -123,7 +94,7 @@
 							  </div>
 							  <div class="post-preview">
 								  <a href="#">
-									  <img src="Images/HomeImg01.jpg" alt class="img-fluid-rounded"/>
+                                      <img src="Images/HomeImg01.jpg" style="width:100%;"/>
 								  </a>
 							  </div>
 							  <div class="post-content">
@@ -139,8 +110,16 @@
 							  </div>
 						  </article>
 						  <!--Post End-->
+					  
 					  </div>
 					  <!--Content End-->
+                      <div class="col-lg-3">
+						  <!--Post-->
+                          <p>
+									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
+								  </p>
+						  <!--Post End-->
+					  </div>
 				  </div>
 			  </div>
 		  </section>
@@ -246,6 +225,10 @@ window.addEventListener("resize", function () {
 })
     </script>
     <style>
+        #wraper{
+            display: grid;
+    grid-template-columns: repeat(34, 1fr);
+    color: black;}
 		body{			 
 			   font-family: 'Nunito Sans', sans-serif;
 		}
@@ -295,12 +278,16 @@ window.addEventListener("resize", function () {
 
          }
 	  .page-wrapper{
-		  margin-left: 280px;
+          margin-left:280px;
 			background-color: #ffffff;
 			padding: 0 20px;
 			z-index:1;
 			font-size:1.2em;
+                grid-column: 1/35;
 	  }
+      .container{
+          display: flex;
+    width: 100%;}
     
     </style>
 </asp:Content>
