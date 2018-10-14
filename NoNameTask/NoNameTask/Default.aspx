@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NoNameTask._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <link href="Content/Default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <div id="wraper">
       <div id="sidebar">
         <div class="logo">
@@ -9,7 +10,6 @@
             <p><%Response.Write(MenyHeaders[0].Text);%></p>
         </div>
         <div class="BlogezyMeny">
-
             <ul>
                 <% foreach (var menyItem in MenyItems)
                     {
@@ -50,7 +50,7 @@
 					  <div class="col-lg-12">
 						  <div class="page-title">
 							  <div class="row">
-								  <div class="col-md-12 col-xs-12">
+								  <div class="col-md-9 col-xs-12">
 									  <h2>
 										  <span>News and Stories</span>
 									  </h2>
@@ -65,11 +65,11 @@
 				  </div>
 			  </div>
 		  </section>
-		  <section class="mt-5 pb-5">
+		  <section class="mt-5 pb-5 main">
 			  <div class="container">
 				  <div class="row">
 					  <!--Content-->
-					  <div class="col-lg-9">
+					  <div class="col-lg-8">
 						  <!--Post-->
 						  <article class="post">
 							  <div class="post-header">
@@ -78,16 +78,16 @@
 								  </h2>
 								  <ul class="post-meta">
 									  <li>
-										  <i class="mdi mdi-calendar"></i>
-										   <span>July 03, 2017</span>
+										  <i class="fas fa-calendar-alt"></i>
+										   <a>July 03, 2017</a>
 									  </li>
 									  <li>
-										  <i class="mdi mdi-tag-text-outline"></i>
+										  <i class="fas fa-pencil-alt"></i>
 										  <a href="#">Branding</a>
 										  <a href="#">Design</a>
 									  </li>
 									  <li>
-										  <i class="mdi mdi-comment-multiple-outline"></i>
+										  <i class="fas fa-comments"></i>
 										  <a href="#">3 Comments</a>
 									  </li>
 								  </ul>
@@ -102,10 +102,10 @@
 									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
 								  </p>
 							  </div>
-							  <div>
+							  <div class="btnMore">
 								  <a href="#" class="btn btn-outline-custom">
 									  Read More
-									  <i class="mdi mdi-arrow-right"></i>
+                                      <i class="fas fa-arrow-right"></i>
 								  </a>
 							  </div>
 						  </article>
@@ -113,11 +113,97 @@
 					  
 					  </div>
 					  <!--Content End-->
-                      <div class="col-lg-3">
+                      <div class="col-lg-4 main-right">
 						  <!--Post-->
-                          <p>
-									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
-								  </p>
+                          <div class="main-right">
+                              <aside class="widget widget_search">
+                                        <div>
+                                            <input class="form-control pr-5" type="search" placeholder="Search...">
+                                            <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </aside>
+                              <aside class="widget about-widget">
+                                        <div class="widget-title">About Me</div>
+
+                                        <div class="text-center">
+                                            <img src="images/AboutMe01.jpg" alt="About Me" class="rounded-circle">
+
+                                            <p>Quis vero phasellus hac nullam, in quam vitae duis adipiscing mauris leo, laoreet eget at quis, ante vestibulum vivamus vel. Sapien lobortis, eget orci purus amet pede, consectetur neque risus.</p>
+                                        </div>
+
+                                    </aside>
+                              <aside class="widget about-widget">
+                                        <div class="widget-title">Subscribe &amp; Follow</div>
+
+                                        <ul class="socials">
+                                            <li><a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="http://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="http://instagram.com"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="http://pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
+                                        </ul>
+
+                                    </aside>
+                              <aside class="widget about-widget">
+                                        <div class="widget-title">Categories</div>
+                                        <ul class="categoryItem">
+                                            <li><a href="#">Journey</a> (40)</li>
+                                            <li><a href="#">Photography</a> (08)</li>
+                                            <li><a href="#">Lifestyle</a> (11)</li>
+                                            <li><a href="#">Food &amp; Drinks</a> (21)</li>
+                                        </ul>
+                                    </aside>
+                              <aside class="widget about-widget">
+                                        <div class="widget-title">Popular Posts</div>
+                                        <ul class="popular-post">
+                                            <li class="clearfix">
+                                                <div class="wi">
+                                                    <a href="#"><img src="images/PopularPost01.jpg" alt="" class="img-fluid"></a>
+                                                </div>
+                                                <div class="wb"><a href="#">Beautiful Day With Friends..</a> <span class="post-date">Jun 15, 2017</span></div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="wi">
+                                                    <a href="#"><img src="images/PopularPost02.jpg" alt="" class="img-fluid"></a>
+                                                </div>
+                                                <div class="wb"><a href="#">Nature valley with cooling..</a> <span class="post-date">Jun 10, 2017</span></div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="wi">
+                                                    <a href="#"><img src="images/PopularPost03.jpg" alt="" class="img-fluid"></a>
+                                                </div>
+                                                <div class="wb"><a href="#">15 Best Healthy and Easy Salad..</a> <span class="post-date">Jun 8, 2017</span></div>
+                                            </li>
+                                        </ul>
+                                    </aside>
+                              <aside class="widget about-widget">
+                                        <div class="widget-title">Text Widget</div>
+
+                                        <p class="text-muted text-widget-des">Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. </p>
+
+                                    </aside>
+                              <aside class="widget about-widget">
+                                        <div class="widget-title">Archives</div>
+
+                                        <ul class="archiveItem">
+                                            <li><a href="#">March 2017</a> (40)</li>
+                                            <li><a href="#">April 2017</a> (08)</li>
+                                            <li><a href="#">May 2017</a> (11)</li>
+                                            <li><a href="#">Jun 2017</a> (21)</li>
+                                        </ul>
+
+                                    </aside>
+                              <aside class="widget about-widget">
+                                        <div class="widget-title">Tags</div>
+                                        <div class="tagcloud">
+                                            <a href="#">logo</a>
+                                            <a href="#">business</a>
+                                            <a href="#">corporate</a>
+                                            <a href="#">e-commerce</a>
+                                            <a href="#">agency</a>
+                                            <a href="#">responsive</a>
+                                        </div>
+                                    </aside>
+                          </div>
 						  <!--Post End-->
 					  </div>
 				  </div>
@@ -127,167 +213,5 @@
 
 
 </div>
-    <script>
-        let itemsHead = document.querySelectorAll(".itemHead");
-        let itemsMain = document.querySelectorAll(".itemMain");
-        /*--------sidebar start--------------- */
-let g = true
-for (let i = 0; i < itemsHead.length; i++) {
-    $(document).ready(function () {
-        $(itemsHead[i]).val("1");
-        $(itemsHead[i]).click(() => {
-
-            yoxla($(itemsHead[i]).val());
-            if (g) {
-                $(itemsHead[i]).addClass("select");
-                $(itemsHead[i]).val("2");
-            }
-            else {
-                $(itemsHead[i]).val("1");
-
-            }
-
-            if (g) {
-                $(itemsMain[i]).slideToggle("fast")
-            }
-            setTimeout(() => {
-                let pos = itemsHead[i].offsetTop;
-                let k = 0;
-                let h = setInterval(() => {
-                    document.documentElement.scrollTo(0, pos - k)
-                    k++;
-                    if (k == 100) {
-                        clearInterval(h);
-                    }
-                }, 5)
-
-            }, 500)
-            g = true;
-        })
-    })
-}
-function yoxla(clickVal) {
-    for (let k of itemsHead) {
-        if ($(k).val() == "2") {
-            if ($(k).val() == clickVal) {
-                g = false;
-            }
-            $(k).next().slideToggle();
-            $(k).val("1")
-        }
-    }
-    for (let k of itemsHead) {
-        $(k).removeClass("select")
-    }
-}
-let h = true
-for (let i = 0; i < itemsDevelopHead.length; i++) {
-    $(document).ready(function () {
-        $(itemsDevelopHead[i]).val("1");
-        $(itemsDevelopHead[i]).click(() => {
-            yoxla2($(itemsDevelopHead[i]).val());
-            if (h) {
-                $(itemsDevelopHead[i]).addClass("select2");
-                $(itemsDevelopHead[i]).val("2");
-            }
-            else {
-                $(itemsDevelopHead[i]).val("1");
-
-            }
-
-            if (h) {
-                $(itemsDevelopMain[i]).slideToggle("fast")
-            }
-            h = true;
-        })
-    })
-}
-
-window.addEventListener("resize", function () {
-    function resize() {
-        windowInnerWidth = window.innerWidth;
-        // windowInnerHeight = document.getElementById('main').offsetHeight;
-        if (windowInnerHeight > 2000) {
-            // $('#sidebar').css('min-height', `${windowInnerHeight}px`);
-            // $('#chatUI').css('min-height', `${windowInnerHeight}px`);
-        }
-        if (windowInnerWidth < 992) {
-            $("#main").css('margin-left', '0px');
-        }
-        else {
-            $("#main").css('margin-left', '200px');
-            $("#sidebar").css('opacity', '1');
-            $("#sidebar").off('mouseenter')
-            $("#sidebar").off('mouseleave')
-        }
-    }
-    resize();
-})
-    </script>
-    <style>
-        #wraper{
-            display: grid;
-    grid-template-columns: repeat(34, 1fr);
-    color: black;}
-		body{			 
-			   font-family: 'Nunito Sans', sans-serif;
-		}
-        .body-content {
-			width:100%;
-			height:100%;
-			background-color: rgb(225,230,237);
-			padding: 35px;
-        }
-      #sidebar {
-    grid-column: 1/6;
-    width: 280px;
-    background-color: #f0f4f7;
-    display: inline-block;
-	position:absolute;
-    z-index: 2;
-    padding:40px;
-    
-      }
-      #sidebar .logo img{
-          height: 44px;
-      }
-      #sidebar .logo p{
-          margin: 30px 0 45px 0;
-          opacity:0.5;
-      }
-    #sidebar ul {
-      color: #000000;
-      padding: 0;
-      margin: 0;
-      list-style: none; }
-      #sidebar ul > li {
-        cursor: pointer;
-        position: relative;
-        padding: 10px 0px 12px 0px;
-        margin: 12px 0 12px 0;
-            font-size: 16px; }
-        #sidebar ul > li i:nth-of-type(2) {
-          float: right; }
-      #sidebar ul > ul {
-        display: none;
-        opacity:0.6;
-        margin-left:10px;
-         }
-      #sidebar ul > ul >li{
-        margin: 5px 0 5px 0;
-
-         }
-	  .page-wrapper{
-          margin-left:280px;
-			background-color: #ffffff;
-			padding: 0 20px;
-			z-index:1;
-			font-size:1.2em;
-                grid-column: 1/35;
-	  }
-      .container{
-          display: flex;
-    width: 100%;}
-    
-    </style>
+    <script src="Scripts/ScriptDefault.js"></script>
 </asp:Content>
