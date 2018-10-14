@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -186,6 +192,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AboutMe.cs" />
+    <Compile Include="Models\Archive.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\MainArticle.cs" />
+    <Compile Include="Models\MainHead.cs" />
+    <Compile Include="Models\MenyHeader.cs" />
+    <Compile Include="Models\MenyItem.cs" />
+    <Compile Include="Models\MenyItemIn.cs" />
+    <Compile Include="Models\NoNameDbContext.cs" />
+    <Compile Include="Models\Outline.cs" />
+    <Compile Include="Models\PopularPost.cs" />
+    <Compile Include="Models\Subscribe.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TextWidget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
