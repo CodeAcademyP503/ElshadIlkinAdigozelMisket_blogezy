@@ -74,23 +74,4 @@ for (let i = 0; i < itemsDevelopHead.length; i++) {
     })
 }
 
-window.addEventListener("resize", function () {
-    function resize() {
-        windowInnerWidth = window.innerWidth;
-        // windowInnerHeight = document.getElementById('main').offsetHeight;
-        if (windowInnerHeight > 2000) {
-            // $('#sidebar').css('min-height', `${windowInnerHeight}px`);
-            // $('#chatUI').css('min-height', `${windowInnerHeight}px`);
-        }
-        if (windowInnerWidth < 992) {
-            $("#main").css('margin-left', '0px');
-        }
-        else {
-            $("#main").css('margin-left', '200px');
-            $("#sidebar").css('opacity', '1');
-            $("#sidebar").off('mouseenter')
-            $("#sidebar").off('mouseleave')
-        }
-    }
-    resize();
-})
+
