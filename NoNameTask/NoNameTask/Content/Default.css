@@ -11,6 +11,34 @@
 	width: 100%;
 	padding: 35px;
 }
+.nav {
+    grid-column: 1/35;
+    height: 100px;
+    background-color: rgb(225,230,237);
+    display: grid;
+    z-index: 3;
+    grid-template-columns: repeat(2,auto);
+
+}
+    .nav .left {
+        grid-column: 1/2;
+    }
+        .nav .left img {
+            height: 44px;
+            margin: 40px;
+        }
+    .nav .right {
+        grid-column: 2/3;
+    }
+
+        .nav .right i {
+            float: right;
+            font-size: 25px;
+            padding: 20px;
+            color: black;
+            z-index: 3;
+            cursor: pointer;
+        }
 
 #sidebar {
     grid-column: 1/6;

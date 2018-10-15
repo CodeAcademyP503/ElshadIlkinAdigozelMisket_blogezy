@@ -4,6 +4,14 @@
     <link href="Content/Default.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <div id="wraper">
+    <div class="nav">
+        <div class="left">
+            <img src="Images/HomeLogo.png" />
+        </div>
+        <div class="right">
+            <i class="fas fa-bars bar"></i>
+        </div>
+    </div>
       <div id="sidebar">
         <div class="logo">
             <img src="<%Response.Write(MenyHeaders[0].LogoPath);%>" alt="">
