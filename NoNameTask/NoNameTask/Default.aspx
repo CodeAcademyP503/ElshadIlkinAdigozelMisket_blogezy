@@ -12,7 +12,8 @@
             <i class="fas fa-bars bar"></i>
         </div>
     </div>
-      <div id="sidebar">
+    <div class="scroll">
+        <div id="sidebar">
         <div class="logo">
             <img src="<%Response.Write(MenyHeaders[0].LogoPath);%>" alt="">
             <p><%Response.Write(MenyHeaders[0].Text);%></p>
@@ -51,6 +52,7 @@
             </ul>
      </div>
 </div>
+    </div>
 	  <div class="page-wrapper">
 		  <section>
 			  <div class="container">

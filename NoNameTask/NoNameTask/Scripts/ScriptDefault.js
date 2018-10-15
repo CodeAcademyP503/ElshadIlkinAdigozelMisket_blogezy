@@ -1,6 +1,14 @@
 ﻿
 let itemsHead = document.querySelectorAll(".itemHead");
 let itemsMain = document.querySelectorAll(".itemMain");
+let windowInnerWidth = $(window).innerWidth();
+window.addEventListener("resize", function () {
+
+    function resize() {
+        windowInnerWidth = $(window).innerWidth();
+    }
+    resize();
+})
 /*--------sidebar start--------------- */
 let g = true
 for (let i = 0; i < itemsHead.length; i++) {
@@ -21,18 +29,20 @@ for (let i = 0; i < itemsHead.length; i++) {
             if (g) {
                 $(itemsMain[i]).slideToggle("fast")
             }
-            setTimeout(() => {
-                let pos = itemsHead[i].offsetTop;
-                let k = 0;
-                let h = setInterval(() => {
-                    document.documentElement.scrollTo(0, pos - k)
-                    k++;
-                    if (k == 100) {
-                        clearInterval(h);
-                    }
-                }, 5)
+            if (g && windowInnerWidth > 751) {
+                setTimeout(() => {
+                    let pos = itemsHead[i].offsetTop;
+                    let k = 0;
+                    let h = setInterval(() => {
+                        document.documentElement.scrollTo(0, pos - k)
+                        k++;
+                        if (k == 100) {
+                            clearInterval(h);
+                        }
+                    }, 5)
 
-            }, 500)
+                }, 500)
+            }
             g = true;
         })
     })

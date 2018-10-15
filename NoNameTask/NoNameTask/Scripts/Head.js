@@ -1,27 +1,28 @@
-﻿(function () {
-    let windowInnerHeight = document.getElementById('wraper').offsetHeight;
-    $('#sidebar').css("height", `${windowInnerHeight}px`);
+﻿let windowInnerHeight;
+(function () {
     let windowInnerWidth = $(window).innerWidth();
-    
+    let scrollHeader = $(window).innerHeight();
+    windowInnerHeight = document.getElementById('wraper').offsetHeight;
+    $('.scroll').css("height", `${windowInnerHeight}px`);
     $(".bar").click(() => {
-        if ($("#sidebar").css('z-index')=="1")
-            $("#sidebar").css('z-index', '5');
+        if ($(".scroll").css('z-index')=="1")
+            $(".scroll").css('z-index', '5');
         else
-            $("#sidebar").css('z-index', '1');
-
-
-
+            $(".scroll").css('z-index', '1');
     })
 
-    if (windowInnerWidth < 992) {
+    if (windowInnerWidth < 751) {
         $(".page-wrapper").css('margin-left', '0px');
         $(".nav").css('display', 'grid');
-        $(".body-content").css('padding', '0px');
+            $('.scroll').css("position",'fixed');
+            $('.scroll').css("height", `${scrollHeader}px`);
     }
     else {
         $(".page-wrapper").css('margin-left', '280px');
         $(".nav").css('display', 'none');
-        $(".body-content").css('padding', '35px');
+        $('.scroll').css("position", 'absolute');
+        windowInnerHeight = document.getElementById('wraper').offsetHeight;
+        $('.scroll').css("height", `${windowInnerHeight}px`);
     }
 })();
 
@@ -30,16 +31,20 @@ window.addEventListener("resize", function () {
     function resize() {
         windowInnerWidth = $(window).innerWidth();
 
-        windowInnerHeight = document.getElementById('wraper').offsetHeight;
-        $('#sidebar').css("height", `${windowInnerHeight}px`);
-        if (windowInnerWidth < 992) {
+         windowInnerHeight = document.getElementById('wraper').offsetHeight;
+
+        if (windowInnerWidth < 751) {
             $(".page-wrapper").css('margin-left', '0px');
             $(".nav").css('display', 'grid');
+            $('.scroll').css("position", 'fixed');
+            scrollHeader = $(window).innerHeight();
+            $('.scroll').css("height", `${scrollHeader}px`);
         }
         else {
             $(".page-wrapper").css('margin-left', '280px');
             $(".nav").css('display', 'none');
-
+            $('.scroll').css("height", `${windowInnerHeight}px`);
+            $('.scroll').css("position",'absolute');
         }
     }
     resize();
