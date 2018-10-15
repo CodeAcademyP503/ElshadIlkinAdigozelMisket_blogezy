@@ -1,0 +1,388 @@
+﻿#wraper {
+    display: grid;
+    grid-template-columns: repeat(34, 1fr);
+    color: black;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.body-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(225,230,237);
+    padding: 35px;
+}
+
+#sidebar {
+    grid-column: 1/6;
+    width: 280px;
+    background-color: #f0f4f7;
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    padding: 40px;
+}
+
+    #sidebar .logo img {
+        height: 44px;
+    }
+
+    #sidebar .logo p {
+        margin: 30px 0 45px 0;
+        opacity: 0.5;
+    }
+
+    #sidebar >div ul {
+        color: #000000;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+        #sidebar >div ul >li {
+            cursor: pointer;
+            position: relative;
+            padding: 10px 0px 12px 0px;
+            margin: 12px 0 12px 0;
+            font-size: 15px;
+            font-weight:600;
+        }
+
+            #sidebar >div ul >li i:nth-of-type(2) {
+                float: right;
+            }
+
+        #sidebar >div ul >ul {
+            display: none;
+            opacity: 0.6;
+            margin-left: 10px;
+        }
+
+            #sidebar >div ul >ul >li {
+                margin: 5px 0 5px 0;
+            }
+
+.page-wrapper {
+    margin-left: 280px;
+    background-color: #ffffff;
+    padding: 0 20px;
+    z-index: 1;
+    font-size: 1.2em;
+    grid-column: 1/35;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/*======== Title-----------*/
+.page-title > div > div h2 {
+    margin: 45px 0 21px 0;
+}
+.page-title > div > div p {
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0.7;
+}
+
+/*------main-------*/
+.main {
+    margin-top: 67px;
+}
+    .main >div >div >div .post >div >h2 {
+        font-size: 22px;
+        margin: 0 0 10px;
+    }
+    .main >div >div >div .post >div >h2 >a {
+        text-decoration:none;
+        transition:all .3s ease;
+        color:#000;
+    }
+        .main >div >div >div .post >div >h2 >a:hover {
+            color: #0db3e3;
+        }
+    .main >div >div >div .post >div >ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        opacity: .7;
+        color: #000;
+    }
+    .main >div >div >div .post >div >ul >li {
+        display:inline-block;
+        margin-right:30px;
+        font-size:14px;
+        float: left;
+    }
+        .main >div >div >div .post >div >ul >li >a{
+            text-decoration:none;
+            color:#000;
+            transition:all .3s ease;
+        }
+            .main >div >div >div .post >div >ul >li >a:hover {
+                color: #0db3e3;
+            }
+        .main >div >div >div .post >div >ul >li >i{
+            font-size:12px;
+            opacity:0.7;
+        }
+            .main >div >div >div .post >div >ul >li >a :hover {
+                transition: all .3s ease;
+                color: #0db3e3;
+            }
+    .main >div >div >div .post .post-header{
+        margin:0 0 57px;
+    }
+    .main >div >div >div .post .post-preview{
+        margin-bottom:20px;
+        transition:all 0.6s ease;
+    }
+        .main >div >div >div .post .post-preview:hover {
+            
+            opacity:0.5;
+        }
+    .main >div >div >div .post .post-content{
+        margin:0 0 20px;
+        line-height:26px;
+        font-size:15px;
+        opacity:0.7;
+    }
+    .main > div > div > div .post .btnMore > a:hover {
+        background-color: #0db3e3;
+        color:white;
+    }
+    .main > div > div > div .post .btnMore >a{
+        text-transform: uppercase;
+        transition:all .3s ease;
+        font-size: 12px;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        font-weight: 600;
+        padding: 9px 15px;
+        color: #0db3e3;
+        border: 1px solid #0db3e3;
+    }
+.main-right {
+    padding-left: 30px;
+    font-family: "Nunito Sans", sans-serif;
+}
+    .main-right .widget_search {
+        font-size: 14px;
+        margin: 0px 0px 40px;
+
+    }
+    .main-right .widget_search >div .form-control{
+        box-shadow: none;
+        height: 49px;
+        font-size: 14px;
+        border-radius: 2px;
+        padding: 12px 15px;
+    }
+        .main-right .widget_search >div{
+            position:relative;
+        }
+        .main-right .widget_search >div >button {
+            position: absolute;
+            top: 0px;
+            height: 100%;
+            right: 10px;
+            background-color: transparent;
+            font-size: 20px;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+            transition: all 0.3s ease-out 0s;
+        }
+            .main-right .widget_search >div >button i{
+                font-size:17px;
+            }
+            .main-right .widget_search >div >button:hover {
+                color:#0db3e3;
+            }
+.about-widget {
+    margin: 0 0 40px;
+    font-size: 14px;
+}
+    .about-widget .widget-title::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        box-sizing: inherit;
+    }
+    .about-widget .widget-title {
+        position: relative;
+        font-size: 14px;
+        margin: 0 0 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+    }
+        .about-widget .widget-title::after {
+            content: "";
+            display: block;
+            box-sizing: inherit;
+            width: 35px;
+            z-index: 1;
+            position: relative;
+            margin: 20px auto 25px 0px;
+            border-bottom: 1px solid #0db3e3;
+        }
+    .about-widget .text-center {
+        text-align: center !important;
+        background-color: white;
+    }
+        .about-widget .text-center img {
+            margin-bottom: 20px;
+            max-width: 100%;
+            width: 160px;
+            height: auto;
+            vertical-align: middle;
+            border-style: none;
+            border-radius: 50%;
+        }
+        .about-widget .text-center p {
+            line-height: 24px;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+    .about-widget .socials {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display:flex;
+    }
+    .about-widget .socials >li {
+        margin-left: 0;
+        padding-bottom: 10px;
+        display: inline-block !important;
+        margin: 0 4px 5px;
+        text-align: center;
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+        box-sizing: inherit;
+    }
+        .about-widget .socials >li >a {
+            transition: all 0.5s;
+            display: inline-block;
+            margin-top: 0px;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 15px;
+            transition: all 0.5s;
+            background-color: #4a4a4a;
+            border-radius: 50%;
+            color: #fff !important;
+            text-decoration: none !important;
+            outline: none !important;
+        }
+    .about-widget .categoryItem {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+        .about-widget .categoryItem >li {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+            .about-widget .categoryItem >li >a {
+                margin-right: 5px;
+                text-decoration: none;
+                transition: all 0.5s;
+                color:#000;
+            }
+                .about-widget .categoryItem >li >a:hover {
+                    color: #0db3e3;
+                }
+    .about-widget .popular-post {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+        .about-widget .popular-post .clearfix {
+            border-bottom: 1px solid rgba(238, 238, 238, .7);
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+            .about-widget .popular-post .clearfix .wi {
+                float: left;
+                width: 64px;
+            }
+                .about-widget .popular-post .clearfix .wi >a {
+                    color: #333333;
+                    transition: all 0.5s;
+                    text-decoration: none;
+                    color:#000;
+                }
+                    .about-widget .popular-post .clearfix .wi >a >img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+            .about-widget .popular-post .clearfix .wb {
+                padding-top: 2px;
+                margin-left: 84px;
+            }
+                .about-widget .popular-post .clearfix .wb >a {
+                    color: #000;
+                    transition: all 0.5s ease;
+                    text-decoration:none;
+                    font-size:12px;
+                }
+                    .about-widget .popular-post .clearfix .wb >a:hover {
+                        color: #0db3e3;
+                    }
+                .about-widget .popular-post .clearfix .wb >span {
+                    display: block;
+                    opacity: .7;
+                }
+    .about-widget .text-muted {
+        font-size: 14px;
+        font-family: 'Nunito Sans', sans-serif;
+        opacity:0.7;
+    }
+    .about-widget .archiveItem {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+        .about-widget .archiveItem >li {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+
+        }
+            .about-widget .archiveItem >li >a {
+                color: #000;
+                transition: all 0.5s;
+                text-decoration:none;
+            }
+            .about-widget .archiveItem >li >a:hover {
+                color: #0db3e3;
+            }
+    .about-widget .tagcloud {
+    }
+        .about-widget .tagcloud >a {
+            background: #f5f5f5;
+            border-radius: 2px;
+            color: #303133;
+            font-weight: 700;
+            display: inline-block;
+            font-size: 9px;
+            letter-spacing: 1px;
+            margin: 5px 10px 5px 0;
+            padding: 7px 8px 5px 10px;
+            text-decoration:none;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+        }
+        .about-widget .tagcloud >a:hover {
+            color:white;
+            background-color:#0db3e3;
+        }
