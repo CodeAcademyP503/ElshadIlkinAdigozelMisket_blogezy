@@ -301,6 +301,11 @@ window.addEventListener("resize", function () {
 			z-index:1;
 			font-size:1.2em;
 	  }
+	  .post{
+		 width:100%;
+
+	  }
+
     
     </style>
 </asp:Content>
