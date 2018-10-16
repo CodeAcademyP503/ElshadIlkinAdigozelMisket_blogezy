@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NoNameTask._Default" %>
+﻿<%@ Page Title="Home Page" Async="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NoNameTask._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="Content/Default.css" rel="stylesheet" />
@@ -6,7 +6,7 @@
 <div id="wraper">
     <div class="nav">
         <div class="left">
-            <img src="Images/HomeLogo.png" />
+            <img src="Images/HomeLogo.png"/>
         </div>
         <div class="right">
             <i class="fas fa-bars bar"></i>
@@ -80,35 +80,43 @@
 					  <!--Content-->
 					  <div class="col-lg-8">
 						  <!--Post first-->
-						  <article class="post">
+                          <%
+                              foreach (var article in MainArticle)
+                              {
+                                  %>
+                          
+                           <article class="post">
 							  <div class="post-header">
 								  <h2 class="post-title">
-									  <a href="#">Beautiful Day With Friends In Paris</a>
+									  <a href="#"><%Response.Write(article.Name);%></a>
 								  </h2>
 								  <ul class="post-meta">
 									  <li>
 										  <i class="fas fa-calendar-alt"></i>
-										   <a>July 03, 2017</a>
+										   <a> <%Response.Write(article.Date.ToString("dd-MM-yyyy")); %></a>
 									  </li>
 									  <li>
 										  <i class="fas fa-pencil-alt"></i>
-										  <a href="#">Branding</a>
-										  <a href="#">Design</a>
+                                          <%foreach (var outli in article.Outlines)
+                                              {
+										  
+                                                  %><a href="#"><%Response.Write(outli.Name); %></a> <%
+                                              } %>
 									  </li>
 									  <li>
 										  <i class="fas fa-comments"></i>
-										  <a href="#">3 Comments</a>
+										  <a href="#"><%Response.Write(article.Comments.Count.ToString()+" Comments"); %></a>
 									  </li>
 								  </ul>
 							  </div>
 							  <div class="post-preview">
 								  <a href="#">
-                                      <img src="Images/HomeImg01.jpg" style="width:100%;"/>
+                                      <img src="<%Response.Write(article.FotoPath); %>" style="width:100%;"/>
 								  </a>
 							  </div>
 							  <div class="post-content">
 								  <p>
-									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
+                                      <%Response.Write(article.FotoPath); %>
 								  </p>
 							  </div>
 							  <div class="btnMore">
@@ -118,172 +126,9 @@
 								  </a>
 							  </div>
 						  </article>
-						  <!--Post first End-->
-
-						  <!--Post second-->
-						  <article class="post">
-							  <div class="post-header">
-								  <h2 class="post-title">
-									  <a href="#">Nature valley with cooling environment</a>
-								  </h2>
-								  <ul class="post-meta">
-									  <li>
-										  <i class="fas fa-calendar-alt"></i>
-										   <a> July 07, 2017</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-pencil-alt"></i>
-										  <a href="#">Branding</a>
-										  <a href="#">Design</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-comments"></i>
-										  <a href="#">3 Comments</a>
-									  </li>
-								  </ul>
-							  </div>
-							  <div class="post-preview">
-								  <a href="#">
-                                      <img src="Images/HomeImg02.jpg" style="width:100%;"/>
-								  </a>
-							  </div>
-							  <div class="post-content">
-								  <p>
-									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
-								  </p>
-							  </div>
-							  <div class="btnMore">
-								  <a href="#" class="btn btn-outline-custom">
-									  Read More
-                                      <i class="fas fa-arrow-right"></i>
-								  </a>
-							  </div>
-						  </article>
-						  <!--Post second End-->
-
-						  <!--Post third-->
-						  <article class="post">
-							  <div class="post-header">
-								  <h2 class="post-title">
-									  <a href="#">Elegant, Simple & Minimalist Blog Made With Love</a>
-								  </h2>
-								  <ul class="post-meta">
-									  <li>
-										  <i class="fas fa-calendar-alt"></i>
-										   <a> July 05, 2017</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-pencil-alt"></i>
-										  <a href="#">Branding</a>
-										  <a href="#">Design</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-comments"></i>
-										  <a href="#">3 Comments</a>
-									  </li>
-								  </ul>
-							  </div>
-							  <div class="post-preview">
-								  <a href="#">
-                                      <img src="Images/HomeImg03.jpg" style="width:100%;"/>
-								  </a>
-							  </div>
-							  <div class="post-content">
-								  <p>
-									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
-								  </p>
-							  </div>
-							  <div class="btnMore">
-								  <a href="#" class="btn btn-outline-custom">
-									  Read More
-                                      <i class="fas fa-arrow-right"></i>
-								  </a>
-							  </div>
-						  </article>
-						  <!--Post third End-->
-
-						  <!--Post fourth-->
-						  <article class="post">
-							  <div class="post-header">
-								  <h2 class="post-title">
-									  <a href="#">15 Best Healthy and Easy Salad Recipes</a>
-								  </h2>
-								  <ul class="post-meta">
-									  <li>
-										  <i class="fas fa-calendar-alt"></i>
-										   <a> July 01, 2017</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-pencil-alt"></i>
-										  <a href="#">Branding</a>
-										  <a href="#">Design</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-comments"></i>
-										  <a href="#">3 Comments</a>
-									  </li>
-								  </ul>
-							  </div>
-							  <div class="post-preview">
-								  <a href="#">
-                                      <img src="Images/HomeImg04.jpg" style="width:100%;"/>
-								  </a>
-							  </div>
-							  <div class="post-content">
-								  <p>
-									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
-								  </p>
-							  </div>
-							  <div class="btnMore">
-								  <a href="#" class="btn btn-outline-custom">
-									  Read More
-                                      <i class="fas fa-arrow-right"></i>
-								  </a>
-							  </div>
-						  </article>
-						  <!--Post fourth End-->
-
-						  <!--Post fifth-->
-						  <article class="post">
-							  <div class="post-header">
-								  <h2 class="post-title">
-									  <a href="#">Easy Homemade Candy Recipes and Ideas</a>
-								  </h2>
-								  <ul class="post-meta">
-									  <li>
-										  <i class="fas fa-calendar-alt"></i>
-										   <a> June 18, 2017</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-pencil-alt"></i>
-										  <a href="#">Branding</a>
-										  <a href="#">Design</a>
-									  </li>
-									  <li>
-										  <i class="fas fa-comments"></i>
-										  <a href="#">3 Comments</a>
-									  </li>
-								  </ul>
-							  </div>
-							  <div class="post-preview">
-								  <a href="#">
-                                      <img src="Images/HomeImg05.jpg" style="width:100%;"/>
-								  </a>
-							  </div>
-							  <div class="post-content">
-								  <p>
-									  Whether an identity or campaign, we make your brand visible, relevant and effective by placing the digital at the center of its ecosystem, without underestimating the power of traditional media. Whether an identity or campaign, we make your brand visible.
-								  </p>
-							  </div>
-							  <div class="btnMore">
-								  <a href="#" class="btn btn-outline-custom">
-									  Read More
-                                      <i class="fas fa-arrow-right"></i>
-								  </a>
-							  </div>
-						  </article>
-						  <!--Post fifth End-->
-						  <!--Pagination-->
+                          <%
+                              }
+                              %>
 						  <div class="row">
 							  <div class="col-lg-12">
 									  <ul class="pagination pagination-lg">

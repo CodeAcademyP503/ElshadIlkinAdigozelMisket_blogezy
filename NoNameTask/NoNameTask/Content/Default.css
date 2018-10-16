@@ -21,6 +21,38 @@
         font-size: 1.2em;
         grid-column: 1/35;
     }
+    .nav {
+        grid-column: 1/35;
+        height: 100px;
+        background-color: rgb(225,230,237);
+        display: none;
+        z-index: 3;
+        grid-template-columns: repeat(2,auto);
+    }
+
+        .nav .left {
+            grid-column: 1/2;
+        }
+
+            .nav .left img {
+                height: 44px;
+                margin: 40px;
+            }
+
+        .nav .right {
+            grid-column: 2/3;
+        }
+
+            .nav .right i {
+                float: right;
+                font-size: 25px;
+                padding: 9px 10px;
+                margin: 33px 8px;
+                color: black;
+                z-index: 3;
+                cursor: pointer;
+            }
+
 }
 @media screen and (max-width: 767px) {
     .scroll {
@@ -63,28 +95,6 @@
         font-size: 1.2em;
         grid-column: 1/35;
     }
-}
-@media screen and (max-width: 600px) {
-    .main >div >div >div >div >div .pagination >li:nth-child(5) {
-        display:none;
-    }
-    .main >div >div >div >div >div .pagination >li:nth-child(6) {
-        display: none;
-    }
-}
-
-    body {
-        font-family: 'Nunito Sans', sans-serif;
-    }
-
-    #wraper {
-        display: grid;
-        grid-template-columns: repeat(34, auto);
-        color: black;
-    }
-
-
-
     .nav {
         grid-column: 1/35;
         height: 100px;
@@ -116,6 +126,27 @@
                 z-index: 3;
                 cursor: pointer;
             }
+}
+@media screen and (max-width: 600px) {
+    .main >div >div >div >div >div .pagination >li:nth-child(5) {
+        display:none;
+    }
+    .main >div >div >div >div >div .pagination >li:nth-child(6) {
+        display: none;
+    }
+}
+
+    body {
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    #wraper {
+        display: grid;
+        grid-template-columns: repeat(34, auto);
+        color: black;
+    }
+
+
 
     #sidebar {
     }

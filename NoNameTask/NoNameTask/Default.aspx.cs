@@ -17,9 +17,15 @@ namespace NoNameTask
         {
             Db = new NoNameDbContext();
         }
+
+        
         public List<MenyItem> MenyItems { get;set; }
         public List<MenyHeader> MenyHeaders { get;set; }
         public List<MenyItemIn> MenyItemIns { get;set; }
+
+        public List<MainArticle> MainArticle { get; private set; }
+        public List<Comment> Comments { get; set; }
+        public List<Outline> Outlines { get; set; }
 
         public List<AboutMe> AboutMes { get; set; }
         public List<Subscribe> Subscribes { get; set; }
@@ -28,29 +34,42 @@ namespace NoNameTask
         public List<Archive> Archives { get; set; }
         public List<TextWidget> TextWidgets { get; set; }
         public List<Tag> Tags { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
 		{
+            RegisterAsyncTask(new PageAsyncTask(GetData));
+        }
+
+        private async Task GetData()
+        {
             using (NoNameDbContext db = new NoNameDbContext())
             {
-                MenyItems =  db.MenyItems.ToList();
-                MenyHeaders =  db.menyHeaders.ToList();
-                MenyItemIns = db.MenyItemIns.ToList();
+                MainArticle = await db.MainArticles.ToListAsync();
+                Comments = await db.Comments.ToListAsync();
+                Outlines = await db.Outlines.ToListAsync();
 
-                AboutMes = db.AboutMes.ToList();
-                Subscribes = db.Subscribes.ToList();
-                Categories = db.Categories.ToList();
-                PopularPosts = db.PopularPosts.ToList();
-                Archives = db.Archives.ToList();
-                TextWidgets = db.TextWidgets.ToList();
+                MenyItems = await db.MenyItems.ToListAsync();
+                MenyHeaders =await db.menyHeaders.ToListAsync();
+                MenyItemIns =await db.MenyItemIns.ToListAsync();
+
+                
+
+                AboutMes =await db.AboutMes.ToListAsync();
+                Subscribes =await db.Subscribes.ToListAsync();
+                Categories =await db.Categories.ToListAsync();
+                PopularPosts =await db.PopularPosts.ToListAsync();
+                Archives =await db.Archives.ToListAsync();
+                TextWidgets =await db.TextWidgets.ToListAsync();
                 Tags = db.Tags.ToList();
+
                 var newMeny = MenyItems.GroupJoin(MenyItemIns, x => x.Id, y => y.MenyItem_Id, (xx, ys) => new
                 {
                     Name = xx.Name,
-                    MenyItemIns=ys.Select(x=>new {Id=x.Id, Name = x.Name,MenyItem_id=x.MenyItem_Id}).ToList(),
+                    MenyItemIns = ys.Select(x => new { Id = x.Id, Name = x.Name, MenyItem_id = x.MenyItem_Id }).ToList(),
                 }).ToList();
                 for (int i = 0; i < newMeny.Count; i++)
                 {
-                    if (newMeny[i].MenyItemIns.Count!=0)
+                    if (newMeny[i].MenyItemIns.Count != 0)
                     {
                         foreach (var item in newMeny[i].MenyItemIns)
                         {
@@ -66,16 +85,6 @@ namespace NoNameTask
             }
         }
 
-       
-
-        private async Task Method()
-        {
-            using(NoNameDbContext db=new NoNameDbContext())
-            {
-                MenyItems = await db.MenyItems.ToListAsync();
-                MenyHeaders = await db.menyHeaders.ToListAsync();
-            }
-        }
         public void Close()
         {
             Db.Dispose();

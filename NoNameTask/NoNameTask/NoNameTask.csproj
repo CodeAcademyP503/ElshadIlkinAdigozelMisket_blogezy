@@ -195,6 +195,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810160729105_menyItemPath.cs" />
+    <Compile Include="Migrations\201810160729105_menyItemPath.Designer.cs">
+      <DependentUpon>201810160729105_menyItemPath.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMe.cs" />
     <Compile Include="Models\Archive.cs" />
@@ -248,6 +252,11 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810160729105_menyItemPath.resx">
+      <DependentUpon>201810160729105_menyItemPath.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -9,10 +9,14 @@ namespace NoNameTask.Models
 {
     public class MenyItemIn
     {
+
         public int Id { get; set; }
 
         public string Name { get; set; }
 
         public int MenyItem_Id { get; set; }
+
+        public string PagePath { get; set; }
+
     }
 }

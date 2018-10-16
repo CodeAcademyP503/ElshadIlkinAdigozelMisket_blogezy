@@ -16,6 +16,8 @@ namespace NoNameTask.Models
 
         public string Name { get; set; }
 
+        public string PagePath { get; set; }
+
         public ICollection<MenyItemIn> MenyItemIns { get; set; }
     }
 }
