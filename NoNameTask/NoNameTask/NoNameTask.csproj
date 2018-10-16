@@ -200,6 +200,7 @@
     <Compile Include="Models\Archive.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\GetDbData.cs" />
     <Compile Include="Models\MainArticle.cs" />
     <Compile Include="Models\MainHead.cs" />
     <Compile Include="Models\MenyHeader.cs" />
