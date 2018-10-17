@@ -117,7 +117,7 @@
 							  </div>
 							  <div class="post-content">
 								  <p>
-                                      <%Response.Write(article.FotoPath); %>
+                                      <%Response.Write(article.FotoInfo); %>
 								  </p>
 							  </div>
 							  <div class="btnMore">
