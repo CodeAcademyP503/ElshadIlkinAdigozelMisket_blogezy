@@ -15,6 +15,7 @@
     <div class="scroll">
         <div id="sidebar">
         <div class="logo">
+
             <img src="<%Response.Write(MenyHeaders[0].LogoPath);%>" alt="">
             <p><%Response.Write(MenyHeaders[0].Text);%></p>
         </div>
