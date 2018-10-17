@@ -12,12 +12,7 @@ namespace NoNameTask
 {
 	public partial class _Default : Page
 	{
-        public NoNameDbContext Db { get; set; }
-        public _Default()
-        {
-            Db = new NoNameDbContext();
-        }
-
+       
         
         public List<MenyItem> MenyItems { get;set; }
         public List<MenyHeader> MenyHeaders { get;set; }
@@ -83,11 +78,6 @@ namespace NoNameTask
                 }
 
             }
-        }
-
-        public void Close()
-        {
-            Db.Dispose();
         }
     }
 }
